@@ -1,7 +1,16 @@
-import React from "react";
+// import React from "react";
+import Star from "../assets/star.svg";
 
-const Reating = () => {
-  return <div></div>;
+// eslint-disable-next-line react/prop-types
+const Reating = ({ value }) => {
+  const stars = Array(value).fill(Star);
+  return (
+    <>
+      {stars.map((star, index) => (
+        <img key={index} src={star} width="14" height="14" alt="star" />
+      ))}
+    </>
+  );
 };
 
 export default Reating;
