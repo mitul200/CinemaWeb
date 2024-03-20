@@ -51,6 +51,11 @@ const Header = () => {
                 onClick={handeCartShow}
               >
                 <img src={shoppingCart} width="24" height="24" alt="" />
+                {cardData.length > 0 && (
+                  <span className="rounded-full absolute bg-[#12CF6F] top-[-12px] left-[28px] text-white text-center p-[2px] w-[30px] h-[30px]">
+                    {cardData.length}
+                  </span>
+                )}
               </a>
             </li>
           </ul>

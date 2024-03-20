@@ -19,7 +19,7 @@ const MovieCard = ({ movie }) => {
     if (!found) {
       setCardData([...cardData, movie]);
     } else {
-      console.err(`the movie ${movie.title} is already exiest`);
+      console.log(`the movie ${movie.title} is already exiest`);
     }
   };
 
@@ -35,7 +35,11 @@ const MovieCard = ({ movie }) => {
   return (
     <>
       {showModal && (
-        <MovieDetailsModal movie={selecetedMovie} onClose={handelModalClose} />
+        <MovieDetailsModal
+          movie={selecetedMovie}
+          onCardAdd={handelAddToCart}
+          onClose={handelModalClose}
+        />
       )}
       <figure className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl">
         <a href="#" onClick={() => handelMovieSelecetion(movie)}>
